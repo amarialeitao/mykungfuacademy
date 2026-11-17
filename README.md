@@ -4,6 +4,43 @@ Hybrid database system for a martial-arts academy: a PostgreSQL relational core 
 
 Course project for Introduction to Database Systems 2026/27, Group 12 (Maria Leitão).
 
+## Project status
+
+| Phase | Scope | Status |
+|---|---|---|
+| D1 | Requirements analysis and conceptual (ER) model | Submitted on 12 Oct 2026 (`D1-submitted`) |
+| D2 | Relational implementation in PostgreSQL | Upcoming |
+| D3 | MongoDB integration, migration and sync | Upcoming |
+| D4 | Optimization, indexing and benchmarks | Upcoming |
+
+Each phase lives on its own branch until the final merge (see [Deliveries and branches](#deliveries-and-branches)). The work delivered so far is on [`IBD2627_D1_Group12`](https://github.com/amarialeitao/mykungfuacademy/blob/IBD2627_D1_Group12).
+
+## The domain in short
+
+MyKungFuAcademy manages a single martial-arts academy that teaches several disciplines, such as Kung Fu, Brazilian Jiu-Jitsu and Muay Thai, each with its own ordered rank system.
+
+- **People and progression:** students and instructors (a person can be both), enrollments per discipline, classes and attendance, logged training sessions, training plans, evaluations against criteria and promotions to the next rank.
+- **Community:** events (competitions with medals and community challenges), achievements and leaderboards.
+- **Business:** basic and premium subscriptions with monthly payments.
+
+PostgreSQL holds this relational core. In D3, MongoDB takes the flexible, high-volume or nested data: technique media, wearable telemetry, free-form instructor feedback, the social activity feed and pre-computed training analytics. The full description, assumptions and business rules are in [`docs/domain.md`](https://github.com/amarialeitao/mykungfuacademy/blob/IBD2627_D1_Group12/docs/domain.md).
+
+## Conceptual model (D1)
+
+![ER model](https://raw.githubusercontent.com/amarialeitao/mykungfuacademy/IBD2627_D1_Group12/deliveries/D1/er/model.png)
+
+Every non-trivial modeling choice is recorded as a decision record, for example why promotions are a ternary relationship or how events are generalized into competitions and challenges ([`docs/decisions/`](https://github.com/amarialeitao/mykungfuacademy/blob/IBD2627_D1_Group12/docs/decisions)).
+
+### Questions the database is designed to answer
+
+D1 defines ten exploratory questions that D2 implements in SQL. Three examples:
+
+- **Promotion eligibility:** per discipline, which active students meet both the minimum months and the minimum classes for their next rank?
+- **Regression alerts:** whose score in any criterion dropped by more than 20% of its maximum between their two most recent evaluations?
+- **Overdue but active:** which premium subscribers have a payment more than 15 days overdue but still attended a class in the last 30 days?
+
+All ten are in [`deliveries/D1/queries.md`](https://github.com/amarialeitao/mykungfuacademy/blob/IBD2627_D1_Group12/deliveries/D1/queries.md), and the full D1 report is in [`deliveries/D1/report/report.pdf`](https://github.com/amarialeitao/mykungfuacademy/blob/IBD2627_D1_Group12/deliveries/D1/report/report.pdf).
+
 ## Deliveries and branches
 
 The project is delivered in four phases. Each phase has its own branch, created from the branch of the previous phase:
