@@ -1,0 +1,34 @@
+name: Bug
+description: Something in the schema, data or queries does not behave as specified.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: The wrong result, error message or rule that is not enforced.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should happen
+      description: Include the requirement or business rule ID if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: SQL or MongoDB commands, starting from a fresh database if possible.
+      render: sql
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - PostgreSQL
+        - MongoDB
+        - Synchronization between the two
+        - Documentation

@@ -1,0 +1,42 @@
+name: Task
+description: A piece of work for one of the deliveries (D2, D3, D4 or final).
+title: "[Task] "
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options:
+        - D2 · Relational implementation (PostgreSQL)
+        - D3 · MongoDB integration
+        - D4 · Optimization and benchmarks
+        - Final · Clean-up and merge
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What this task delivers and why it is needed.
+    validations:
+      required: true
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Concrete steps; tick them as they are done.
+      value: |
+        - [ ] 
+    validations:
+      required: true
+  - type: input
+    id: requirements
+    attributes:
+      label: Related requirements
+      description: IDs from the D1 specification, for example FR-26, NFR-05, BR-04.
+      placeholder: FR-.., NFR-.., BR-..
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: How to check that the task is complete (query result, test, document section).
