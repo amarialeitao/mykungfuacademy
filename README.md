@@ -1,5 +1,11 @@
 # MyKungFuAcademy
 
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-relational%20core-4169E1?logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-flexible%20data-47A248?logo=mongodb&logoColor=white)
+![Status](https://img.shields.io/badge/status-D1%20submitted-blue)
+[![Wiki](https://img.shields.io/badge/docs-wiki-lightgrey)](https://github.com/amarialeitao/mykungfuacademy/wiki)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Hybrid database system for a martial-arts academy: a PostgreSQL relational core for academy operations and student progression, and MongoDB for flexible data such as instructional content, wearable telemetry and training analytics.
 
 Course project for Introduction to Database Systems 2026/27, Group 12 (Maria Leitão).
@@ -47,12 +53,12 @@ The project is delivered in four phases. Each phase has its own branch, created 
 
 | Branch | Content |
 |---|---|
-| `master` | This README only, until the final phase |
+| `main` | This README only, until the final phase |
 | `IBD2627_D1_Group12` | D1: requirements analysis and conceptual (ER) model |
 | `IBD2627_D2_Group12` | D2: relational implementation in PostgreSQL |
 | `IBD2627_D3_Group12` | D3: MongoDB integration, migration and sync |
 | `IBD2627_D4_Group12` | D4: optimization, indexing and benchmarks |
-| `IBD2627_Final_Group12` | Final clean-up, merged into `master` at the end |
+| `IBD2627_Final_Group12` | Final clean-up, merged into `main` at the end |
 
 The exact state submitted for each phase is tagged (`D1-submitted`, `D2-submitted`, and so on).
 
